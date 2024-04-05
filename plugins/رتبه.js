@@ -41,20 +41,20 @@ let handler = async (m, { conn, args, usedPrefix, participants }) => {
 
   let len = args[0] && args[0].length > 0 ? Math.min(50, Math.max(parseInt(args[0]), 5)) : Math.min(10, sortedExp.length);
   let text = `
-👑 *المتصدرين العالمية* 👑
+👑 *❁┇المتصدرين العالمية┇❁* 👑
 
 ${sortedExp.slice(0, len).map(({ jid, exp, credit, level, bank, role }, i) => {
   let totalgold = users.find(u => u.jid === jid).credit + users.find(u => u.jid === jid).bank;
   let user = global.db.data.users[jid];
   let username = user.name;
   return `*#${i + 1}.*
-*👑 اسم المستخدم:* ${username}
-*🌟 خبرة:* ${exp}
-*🏆 رتبة:* ${role}
-*✨ مستوى:* ${level}
-*👛 محفظة:* ${credit}
-*🏦 بنك:* ${bank}
-*💰 ذهب:* ${totalgold}`;
+*❁┇👑 اسم المستخدم:↞* ${username}
+*❁┇🌟 خبرة:↞* ${exp}
+*❁┇🏆 رتبة:↞* ${role}
+*❁┇✨ مستوى:↞* ${level}
+*❁┇👛 محفظة:↞* ${credit}
+*❁┇🏦 بنك:↞* ${bank}
+*❁┇💰 ذهب:↞* ${totalgold}`;
 }).join('\n\n\n')}
 *You are at ${usersExp.indexOf(m.sender) + 1} out of total ${usersExp.length} members*`
 .trim();
@@ -66,7 +66,7 @@ ${sortedExp.slice(0, len).map(({ jid, exp, credit, level, bank, role }, i) => {
 
 handler.help = ['leaderboard'];
 handler.tags = ['core'];
-handler.command = ['leaderboard', 'رتبة'];
+handler.command = ['رتبه', 'رتبة'];
 
 export default handler;
 
