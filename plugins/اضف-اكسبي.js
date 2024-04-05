@@ -4,10 +4,10 @@ let handler = async (m, { conn, text }) => {
   let who
   if (m.isGroup) who = m.mentionedJid[0]
   else who = m.chat
-  if (!who) throw '✳️ منشن المستخدم'
+  if (!who) throw '✳┃🚫┃┊✓ منشن المستخدم↞'
   let txt = text.replace('@' + who.split`@`[0], '').trim()
-  if (!txt) throw '✳️ ضيف المبلغ الي عايز تحوله'
-  if (isNaN(txt)) throw ' 🔢 ارقام اوعي تحط رموز يا حب'
+  if (!txt) throw '✳┃🚫┃┊✓ ضيف المبلغ الي عايز تحوله↞'
+  if (isNaN(txt)) throw ' ┃🚫┃┊✓ ارقام اوعي تحط رموز يا حب↞'
   let xp = parseInt(txt)
   let exp = xp
   
@@ -17,9 +17,9 @@ let handler = async (m, { conn, text }) => {
 
   await m.reply(`≡ *اضافه اكسبي*
 ┌──────────────
-▢  *إجمالي:* ${xp}
+▢  *┃🚫┃┊✓إجمالي:↞* ${xp}
 └──────────────`)
- conn.fakeReply(m.chat, `▢ لقد حصلت علي \n\n *+${xp} اكسبي*`, who, m.text)
+ conn.fakeReply(m.chat, `❁┇▢ لقد حصلت علي┇❁ \n\n *+${xp} اكسبي*`, who, m.text)
 }
 
 handler.help = ['addxp <@user>']
