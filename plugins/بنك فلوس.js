@@ -6,26 +6,26 @@ let handler = async (m, {conn, usedPrefix}) => {
     //let { wealth } = global.db.data.users[who]
     if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات الخاصة بي`
 
-    var wealth = 'حطم😭'
+    var wealth = '❁┇حطم😭↞'
      if (`${user.bank}`           <= 3000){
-            wealth = 'حطم😭'
+            wealth = '❁┇حطم😭↞'
       } else if (`${user.bank}`   <= 6000){
-            wealth = 'فقير😢'
+            wealth = '❁┇فقير😢↞'
         } else if (`${user.bank}` <= 100000){
-            wealth = 'متوسط💸'
+            wealth = '❁┇متوسط💸↞'
         } else if (`${user.bank}` <= 1000000){
-            wealth = 'ثري💸💰'
+            wealth = '❁┇ثري💸💰↞'
         } else if (`${user.bank}` <= 10000000){
-            wealth = 'مليونير🤑'
+            wealth = 'مليونير🤑↞'
         } else if (`${user.bank}` <= 1000000000){
-            wealth = 'صاحب اموال طائلة🤑'
+            wealth = '❁┇صاحب اموال طائلة🤑↞'
         } else if (`${user.bank}` <= 10000000000){
-            wealth = 'الملياردير🤑🤑'
+            wealth = '❁┇الملياردير🤑🤑↞'
         }    
     
-    conn.reply(m.chat, `🏦 *Bank | ${username}*
+    conn.reply(m.chat, `┃🚫┃┊✓🏦 *Bank↞ | ${username}*
 
-*🪙 Gold* : ${user.bank}
+*❁┇🪙 Gold┇↞* : ${user.bank}
 
 *Wealth :* ${wealth}
 
