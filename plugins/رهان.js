@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
     return conn.reply(m.chat, 'You must be at least level 5 to use this command.', m);
   }*/
 
-    let fa = `🟥 *توفير كمية الذهب للمراهنة*
+    let fa = `🟥 *❁┇توفير كمية الذهب للمراهنة✓*
 
 *Example:*
 ${usedPrefix + command} 1000`.trim()
