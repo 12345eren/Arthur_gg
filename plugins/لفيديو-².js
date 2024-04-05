@@ -17,6 +17,6 @@ await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['s
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
 console.log(e)}}
 handler.help = ['tovideo'];
-handler.tags = ['لفيديو];
+handler.tags = ['لفايديو];
 handler.command = ['tovideo', 'tomp4', 'mp4', 'togif'];
 export default handler;
