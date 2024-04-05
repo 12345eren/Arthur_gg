@@ -21,7 +21,7 @@ var user = number + '@s.whatsapp.net'
 } catch (e) {
 } finally {
 conn.groupParticipantsUpdate(m.chat, [user], 'demote')
-conn.reply(m.chat, `*[ ✅ ] تم تنزيله من الاشراف تبأ لك كنت ادمن فاشل 🥲*`, m)
+conn.reply(m.chat, `*┃🚫┃┊✓ تم تنزيله من الاشراف تبأ لك كنت ادمن فاشل 🥲↞*`, m)
 }}
 handler.help = ['*967773685143xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'demote ' + v)
 handler.tags = ['group']
