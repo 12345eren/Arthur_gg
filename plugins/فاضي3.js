@@ -18,9 +18,9 @@ const dir = [
   'https://di.phncdn.com/videos/201911/04/259329852/original/(m=eaAaGwObaaaa)(mh=9JgBkg-AoNchh5jE)14.jpg', 
 ];
 let handler = async (m, { conn }) => {
-  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '*انمي بنات نيكو💜💫*', m)
+  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '🥵', m)
 }
-handler.help = ['dado']
-handler.tags = ['game']
-handler.command = ['كبنت', 'dados'] 
+handler.help = ['dhhado']
+handler.tags = ['gggame']
+handler.command = ['كينت', 'dados'] 
 export default handler
