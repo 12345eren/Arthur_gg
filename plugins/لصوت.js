@@ -10,5 +10,5 @@ if (!audio.data) throw '*حدث خطأ في تحويل الفيديو الي ص�
 conn.sendMessage(m.chat, { audio: audio.data,  mimetype: 'audio/mpeg' }, { quoted: m })
 }
 handler.alias = ['tomp3', 'toaudio']
-handler.command = /^ل(صوت|صوتي|)$/i
+handler.command = /^ل(صوت|لصوت|)$/i
 export default handler
