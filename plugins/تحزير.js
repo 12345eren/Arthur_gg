@@ -24,7 +24,7 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
   await m.reply(
       `${
       user.warn == 1 ? '⎔┃اعلان انذار┃↞⎔*@${who.split`@`[0]}*` : `*@${who.split`@`[0]}*`
-      }┃♨️┃تلقي إنذارات في المجموعه┃↞⎔\n ↞السبب:┃✓ ${sdms}\n*↞الإنذارات┃↞✓ ${
+      }┃♨️┃تلقي إنذارات في المجموعه┃↞⎔\n ↞❗️السبب:┃✓ ${sdms}\n*↞⚠️الإنذارات┃↞✓ ${
         user.warn
       }/3*`,
       null,
@@ -33,7 +33,7 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
   if (user.warn >= 3) {
     if (!bot.restrict) {
       return m.reply(
-          '*[❗انذار❗] مطور البوت لم يقم بتفعيله كلمه عشان يفهلها┃✓*',
+          '*[❗انذار❗] مطور البوت لم يقم بتفعيله كلمه عشان يفهلها┃✓ *',
       );
     }
     user.warn = 0;
