@@ -2,27 +2,59 @@ import {googleIt} from '@bochilteam/scraper';
 import google from 'google-it';
 import axios from 'axios';
 let handler = async (m, { conn, command, args, usedPrefix }) => {
-const fetch = (await import('node-fetch')).default;
-const text = args.join` `;
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-if (!text) return conn.reply(m.chat,  `⚠️ 𝙌𝙪𝙚 𝙚𝙨𝙩𝙖 𝙗𝙪𝙨𝙘𝙖𝙣𝙙𝙤 🤔 𝙀𝙨𝙘𝙧𝙞𝙗𝙖 𝙡𝙤 𝙦𝙪𝙚 𝙦𝙪𝙞𝙚𝙧𝙖 𝙗𝙪𝙨𝙘𝙖𝙧\n• 𝙀𝙟: ${usedPrefix + command} loli`, m, {contextInfo: {externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: mg, body: wm, previewType: 0, thumbnail: img.getRandom(), sourceUrl: redes.getRandom()}}})   
-try {
+  const fetch = (await import('node-fetch')).default;
+  const text = args.join` `;
+  if (!text) return conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] 𝙸𝙽𝙶𝚁𝙴𝚂𝙴 𝙴𝙻 𝚃𝙴𝚇𝚃𝙾 𝙾 𝚃𝙴𝙼𝙰 𝚀𝚄𝙴 𝙳𝙴𝚂𝙴𝙴 𝙱𝚄𝚂𝙲𝙰𝚁*', m);
 const url = 'https://google.com/search?q=' + encodeURIComponent(text);
 google({'query': text}).then(res => {
-let teks = `\`🔍 𝘙𝘌𝘚𝘜𝘓𝘛𝘈𝘋𝘖𝘚 𝘋𝘌:\` ${text}\n\n*${url}*\n\n`
+let teks = `*RESULTADOS DE : _${text}_*\n\n${url}\n\n`
 for (let g of res) {
-teks += `_${g.title}_\n_${g.link}_\n_${g.snippet}_\n\n┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n\n`
+teks += `_*${g.title}*_\n_${g.link}_\n_${g.snippet}_\n\n`
 } 
 const ss = `https://image.thum.io/get/fullpage/${url}`
-conn.sendFile(m.chat, ss, 'error.png', teks, fkontak, false, { contextInfo: {externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: wm, body: ' 💫 𝐒𝐮𝐩𝐞𝐫 𝐁𝐨𝐭 𝐃𝐞 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩 🥳 ', previewType: 0, thumbnail: img.getRandom(), sourceUrl: redes.getRandom()}}})  
-handler.limit = 1
+conn.sendFile(m.chat, ss, 'error.png', teks, m)
+//m.reply(teks)
 })
-} catch {    
-handler.limit = 0
-}}
-handler.help = ['google', 'googlef'].map(v => v + ' <pencarian>')
-handler.tags = ['internet']
-handler.command = /^googlef?$/i
-handler.exp = 40
-handler.exp = 3
-export default handler
+} 
+handler.help = ['google', 'googlef'].map((v) => v + ' <pencarian>');
+handler.tags = ['internet'];
+handler.command = /^googlef?$/i;
+export default handler;
+
+/*import {googleIt} from '@bochilteam/scraper';
+import axios from 'axios';
+const handler = async (m, {conn, command, args}) => {
+  const fetch = (await import('node-fetch')).default;
+  const text = args.join` `;
+  if (!text) return conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] 𝙸𝙽𝙶𝚁𝙴𝚂𝙴 𝙴𝙻 𝚃𝙴𝚇𝚃𝙾 𝙾 𝚃𝙴𝙼𝙰 𝚀𝚄𝙴 𝙳𝙴𝚂𝙴𝙴 𝙱𝚄𝚂𝙲𝙰𝚁*', m);
+  const url = 'https://google.com/search?q=' + encodeURIComponent(text);
+  const search = await googleIt(text);
+  const msg = search.articles.map(({title, url, description}) => {
+    return `*${title}*\n_${url}_\n_${description}_`;
+  }).join('\n\n');
+  try {
+    const ss = `https://image.thum.io/get/fullpage/${url}`;
+    await conn.sendFile(m.chat, ss, 'error.png', url + '\n\n' + msg, m);
+  } catch {
+    m.reply(msg);
+  }
+};
+handler.help = ['google', 'googlef'].map((v) => v + ' <pencarian>');
+handler.tags = ['internet'];
+handler.command = /^googlef?$/i;
+export default handler;
+
+ let ss2 = await ssweb(url, 'desktop')
+let dataa = ss2.result
+async function ssweb(url, device = 'desktop'){
+return new Promise((resolve, reject) => {
+const base = 'https://www.screenshotmachine.com'
+const param = { url: url, device: device, cacheLimit: 0 }
+axios({url: base + '/capture.php', method: 'POST', data: new URLSearchParams(Object.entries(param)), headers: { 'content-type': 'application/x-www-form-urlencoded; charset=UTF-8' }}).then((data) => {
+const cookies = data.headers['set-cookie']
+if (data.data.status == 'success') {
+axios.get(base + '/' + data.data.link, { headers: { 'cookie': cookies.join('') }, responseType: 'arraybuffer' }).then(({ data }) => {
+let result = { status: 200, author: '@BrunoSobrino', result: data }
+resolve(result)})
+} else {
+reject({ status: 404, author: 'Ryzn', message: data.data })}}).catch(reject)})}*/
