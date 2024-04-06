@@ -1,3 +1,6 @@
+//Kurosaki 
+//لينك القناة : https://whatsapp.com/channel/0029VaSJqny2kNFyDSt8dM2r
+//🧧🗿🗿🗿🗿
 import similarity from 'similarity'
 const threshold = 0.72
 export async function before(m) {
@@ -6,25 +9,25 @@ export async function before(m) {
         return !0
     this.tokitoki = this.tokitoki ? this.tokitoki : {}
     if (!(id in this.tokitoki))
-        return this.reply(m.chat, '*❐┃هــاذا الــســؤال قــد انــتـهـى┃☑️❯*', m)
+        return this.reply(m.chat, '*⎔┃هــاذا الــســؤال قــد انــتـهـى┃✓❯*', m)
     if (m.quoted.id == this.tokitoki[id][0].id) {
         let isSurrender = /^(انسحب|surr?ender)$/i.test(m.text)
         if (isSurrender) {
             clearTimeout(this.tokitoki[id][3])
             delete this.tokitoki[id]
-            return this.reply(m.chat, '*❐┃طـلـع غـبـي و انســحــب┃⚠️ ❯*', m)
+            return this.reply(m.chat, '*⎔┃طـلـع غـبـي و انســحــب┃🚫 ❯*', m)
         }
         let json = JSON.parse(JSON.stringify(this.tokitoki[id][1]))
 
         if (m.text.toLowerCase() == json.name.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.tokitoki[id][2]
-            this.reply(m.chat, `*❐┃اجـابـة صـحـيـحـة┃✅ ❯*\n*❐↞┇الـجـائـزة💰↞* *${this.tokitoki[id][2]}* *نقطه┇❯*`, m)
+            this.reply(m.chat, `*⎔┃اجـابـة صـحـيـحـة┃✓ ❯*\n*⎔↞┃الـجـائـزة🎖↞* *${this.tokitoki[id][2]}* *نقطه┇❯*`, m)
             clearTimeout(this.tokitoki[id][3])
             delete this.tokitoki[id]
         } else if (similarity(m.text.toLowerCase(), json.name.toLowerCase().trim()) >= threshold)
-            m.reply(`*❐ ┃اقـربـت مـن الاجـابـه┃🚸 ❯*`)
+            m.reply(`*🍁 ┃اقـربـت مـن الاجـابـه┃🍁 ❯*`)
         else
-            this.reply(m.chat, `*❐┃اجـابـة خـاطـئـة ┃❌ ❯*`, m)
+            this.reply(m.chat, `*💧┃اجـابـة خـاطـئـة ┃💧 ❯*`, m)
     }
     return !0
 }
