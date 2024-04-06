@@ -22,5 +22,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.help = ['dalle'];
 handler.tags = ['drawing'];
-handler.command = ['ارسم'];
+handler.command = ['صور];
 export default handler;
