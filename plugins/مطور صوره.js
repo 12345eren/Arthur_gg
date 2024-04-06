@@ -19,7 +19,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/2e8338d1327f0dc89e36c.mp4';
+let videoUrl = 'https://telegra.ph/file/5a7e954fdd4f0ec4646a2.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -36,12 +36,14 @@ let readMore = more.repeat(900)
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = ` 
 
-  مرحبا يا↞${taguser}
+  مرحبا يا↞${taguser}⁩
 ┊┃ ┗━━━━━━━━━━━━━━•
 ┊┃ ┏━━━━━━━━━━━━━━•
- رقم المطور للضرورة فقط✓┃🚫┃┊
+*رقم المطور للضرورة فقط✓┃🚫┃┊*
 ┊┃ ┗━━━━━━━━━━━━━━•
 ┊┃ ┏━━━━━━━━━━━━━━•
+
+*✓بوت مطور بذكاء اصطناعي وكل امور التسلية✓┃🌐┃┊*
 
 *𝑨𝑹𝑻𝑯𝑼𝑹*
 https://wa.me/967773685143
@@ -54,8 +56,8 @@ conn.sendMessage(m.chat, {
     }, { quoted: m });
 }; 
 handler.help = ['مطور']
-handler.tags = ['صاحب البوت']
-handler.command = ['بوت'] 
+handler.tags = ['البوت']
+handler.command = ['المطور'] 
 
 export default handler
 function clockString(ms) {
