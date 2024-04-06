@@ -184,7 +184,7 @@ conn.sendMessage(m.chat, {
     }, { quoted: m });
 }; 
 handler.help = ['main']
-handler.tags = ['الاوامر]
+handler.tags = ['الاوامر']
 handler.command = ['المهام'] 
 
 export default handler
