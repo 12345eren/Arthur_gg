@@ -108,7 +108,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     throw "*❮لا تزال هناك عملية لم تكتمل يا صديقي. الرجاء الانتظار حتى تنتهي❯* >//<";
   let q = m.quoted ? m.quoted : m;
   let mime = (q.msg || q).mimetype || q.mediaType || "";
-  if (!mime) throw `*┊┃🚫┃✓أين هي الصورة التي تريد تحويلها لكرتون↞`;
+  if (!mime) throw `*✓أين هي الصورة التي تريد تحويلها لكرتون✓┊┃🚫┃*`;
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`;
   else conn.cartoon[m.sender] = true;
   m.reply("❮جاري تحويل الصورة لكرتون ...❯");
