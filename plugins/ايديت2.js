@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 }
 
 handler.help = ['animestory']
-handler.tags = ['anime']
+handler.tags = ['ايدي']
 handler.command = /^animestory$/i
 
 
