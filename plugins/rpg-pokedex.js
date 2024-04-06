@@ -1,40 +1,26 @@
 import fetch from 'node-fetch';
 
-let handler = async (m, { conn, text }) => {
-    if (!text) throw 'Por favor, proporciona el nombre de un Pokémon para buscar.';
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  if (!text) throw `*┃يقوم هذا الأمر بإنشاء صور من المطالبات النصية┃↞⎔*\n\n*مثال*\n*◉ ${usedPrefix + command} anime Sukuna*\n*◉ ${usedPrefix + command} anime cat*`;
 
-    const url = `https://some-random-api.com/pokemon/pokedex?pokemon=${encodeURIComponent(text)}`;
+  try {
+    m.reply('*┃🚫┃✓الرجاء الانتظار، جاري إنشاء الصور...✓*');
 
-    const response = await fetch(url);
-    const json = await response.json();
-
-    if (!response.ok) {
-        throw `¡Oops! Parece que hubo un error al buscar el Pokémon. Por favor, inténtalo de nuevo más tarde.`;
+    const endpoint = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${encodeURIComponent(text)}`;
+    const response = await fetch(endpoint);
+    
+    if (response.ok) {
+      const imageBuffer = await response.buffer();
+      await conn.sendFile(m.chat, imageBuffer, 'image.png', null, m);
+    } else {
+      throw '*فشل إنشاء الصورة*';
     }
-
-    const message = `
-*Pokedex - Información de ${json.name}*
-
-*Nombre:* ${json.name}
-*ID:* ${json.id}
-*Tipo:* ${json.type}
-*Habilidades:* ${json.abilities}
-*Tamaño:* ${json.height}
-*Peso:* ${json.weight}
-
-📖 *Descripción:*
-${json.description}
-
-🔍 ¡Encuentra más detalles sobre este Pokémon en la Pokedex! 🔍
-
-🔗 [Pokedex](https://www.pokemon.com/es/pokedex/${json.name.toLowerCase()})
-    `;
-
-    conn.sendMessage(m.chat, { text: message }, 'extendedTextMessage', { quoted: m });
+  } catch {
+    throw '*┃🚫┃أُووبس!  حدث خطأ ما أثناء إنشاء الصور.  الرجاء معاودة المحاولة في وقت لاحق.┃↞⎔*';
+  }
 };
 
-handler.help = ['pokedex <pokemon>'];
-handler.tags = ['anime', 'pokemon'];
-handler.command = /^pokedex/i;
-
+handler.help = ['dalle'];
+handler.tags = ['AI'];
+handler.command = ['dalle', 'ارسم', 'رسم', 'openai2'];
 export default handler;
