@@ -5,11 +5,11 @@ if (new Date - global.db.data.users[m.sender].lastrob < 7200000) throw `*⏱️ 
 let who
 if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
 else who = m.chat
-if (!who) throw `*[❗] منشن للي هتسرقه اااااا اقطعو يده حرامي┇⤪*`
-if (!(who in global.db.data.users)) throw `*[❗] المستخدم غير موجود في قاعدة البيانات الخاصة بي┇⤪*`
+if (!who) throw `*┊┃🚫┃✓ منشن للي هتسرقه اااااا اقطعو يده حرامي✓*`
+if (!(who in global.db.data.users)) throw `*┊┃🚫┃✓ المستخدم غير موجود في قاعدة البيانات الخاصة بي✓*`
 let users = global.db.data.users[who]
 let rob = Math.floor(Math.random() * ro)
-if (users.exp < rob) return m.reply(`😔 @${who.split`@`[0]} لديه أقل من *${ro} xp*\nلا تسرق رجل فقير":`, null, { mentions: [who] })    
+if (users.exp < rob) return m.reply(`😔 @${who.split`@`[0]} لديه أقل من *${ro} xp*\nلا تسرق رجل فقير↞":`, null, { mentions: [who] })    
 global.db.data.users[m.sender].exp += rob
 global.db.data.users[who].exp -= rob 
 m.reply(`*‣ انت سرقت ${rob} XP من @${who.split`@`[0]}*`, null, { mentions: [who] })
