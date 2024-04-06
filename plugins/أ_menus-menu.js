@@ -37,7 +37,7 @@ let readMore = more.repeat(900)
 let str = ` 
 
  مرحبا ${taguser}
- *📜┇قـائـمـة اوامـر الـبـوت┇📜*
+ *📜┇وضع الصيانه┇📜*
 *❑╎الـحـالـه ⚠️ ⦂ 『عـام』*
 *❑╎الـمطـور ⦂『 ايرين』*
 *❑╎الـمنـصـة🕊️⦂『هـيـروكـو』*
@@ -184,8 +184,8 @@ conn.sendMessage(m.chat, {
     }, { quoted: m });
 }; 
 handler.help = ['main']
-handler.tags = ['الاوامر']
-handler.command = ['المهام'] 
+handler.tags = ['المهام]
+handler.command = ['الاوامر'] 
 
 export default handler
 function clockString(ms) {
