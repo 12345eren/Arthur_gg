@@ -11,10 +11,10 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
         "mp4doc"
     ]
     let [feature, inputs, inputs_, inputs__, inputs___] = text.split(" ")
-    if (!lister.includes(feature)) return conn.reply(m.chat, `*🚩 أدخل التنسيق الذي تريد تنزيله بشكل أكبر من عنوان فيديو أو موسيقى على YouTube.*\n\ مثال : ${usedPrefix + command} *mp3* سوره البقره بصوت الشيخ ياسر الدوسري\n\ التشغيلات المتوفرة :\n${usedPrefix + command} *mp3*\n${usedPrefix + command} *mp3doc*\n${usedPrefix + command} *mp4*\n${usedPrefix + command} *mp4doc*`, m)
+    if (!lister.includes(feature)) return conn.reply(m.chat, `*🚩┃أدخل التنسيق الذي تريد تنزيله بشكل أكبر من عنوان فيديو أو موسيقى على YouTube.┃↞⎔*\n\ مثال : ${usedPrefix + command} *mp3* سوره البقره بصوت الشيخ ياسر الدوسري\n\ التشغيلات المتوفرة :\n${usedPrefix + command} *mp3*\n${usedPrefix + command} *mp3doc*\n${usedPrefix + command} *mp4*\n${usedPrefix + command} *mp4doc*`, m)
     if (lister.includes(feature)) {
         if (feature == "mp3") {
-            if (!inputs) return conn.reply(m.chat, `*🚩 أدخل عنوان فيديو أو موسيقى على YouTube.*`, m)
+            if (!inputs) return conn.reply(m.chat, `*🚩✓ أدخل عنوان فيديو أو موسيقى على YouTube.┃↞⎔*`, m)
     await m.react('🕓')
     let res = await yts(text)
     let vid = res.videos[0]
