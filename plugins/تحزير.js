@@ -11,22 +11,22 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
   } else who = m.chat;
   const user = global.db.data.users[who];
   const bot = global.db.data.settings[conn.user.jid] || {};
-  const dReason = '┃بدون سبب';
+  const dReason = 'بدون سبب┃';
   const msgtext = text || dReason;
   const sdms = msgtext.replace(/@\d+-?\d* /g, '');
   const warntext = `*┃🚫┃ قم بالرد علي الرساله او منشن المستخدم┃↞⎔ *\n\n*—◉ مثال↞*\n*${
     usedPrefix + command
-  } @${global.suittag}*`;
+  } @${global.suittag}*⎔↞┃المسؤول`;
   if (!who) {
     throw m.reply(warntext, m.chat, {mentions: conn.parseMention(warntext)});
   }
   user.warn += 1;
   await m.reply(
       `${
-      user.warn == 1 ? `*↞🪧صاحب الانذار┃↞⎔*@${who.split`@`[0]}*⎔↞┃المستخدم┃` : `*@${who.split`@`[0]}*┃`
-      }' ⎔↞┃المسؤول┃\n ⎔↞┃ السبب↞❗️ ${sdms}\n*⎔↞┃الإنذارات↞♨️ ${
+      user.warn == 1 ? `*⎔↞┃صاحب الانذار*@${who.split`@`[0]}*┃` : `*@${who.split`@`[0]}*┃`
+      }'\n ⎔↞┃ السبب↞❗️ ${sdms}\n*⎔↞┃الإنذارات↞♨️ ${
         user.warn
-      }/3*`,
+      }/3┃*`,
       null,
       {mentions: [who]},
   );
