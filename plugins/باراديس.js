@@ -53,9 +53,9 @@ conn.sendMessage(m.chat, {
   gifPlayback: true,gifAttribution: 0
     }, { quoted: m });
 }; 
-handler.help = ['باراديس']
+handler.help = ['الافضل']
 handler.tags = ['براديس']
-handler.command = ['الافضل'] 
+handler.command = ['باراديس'] 
 
 export default handler
 function clockString(ms) {
