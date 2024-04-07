@@ -80,7 +80,7 @@ const dir = [
   '', 
 ];
 let handler = async (m, { conn }) => {
-  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '*⎔↞┃خـلفـيات انـمي جـوجـوتـسـو💎┃*', m)
+  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '*⎔↞┃خـلفـيات انـمـي مـنـوع 🔖┃*', m)
 }
 handler.help = ['dado']
 handler.tags = ['game']
