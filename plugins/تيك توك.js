@@ -23,7 +23,7 @@ imagesSent = false
     throw '*[❗] No se obtuvo respuesta de la página, intente más tarde.*'
  }
 };
-handler.command = /^(ttimg|tiktokimg)$/i;
+handler.command = /^(ttimg|تيك|tiktokimg)$/i;
 export default handler;
 
 async function ttimg(link) {
