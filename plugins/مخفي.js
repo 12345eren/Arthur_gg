@@ -1,49 +1,27 @@
-cmd({
+import MessageType from '@adiwajshing/baileys'
+import { generateWAMessageFromContent } from '@adiwajshing/baileys'
 
-pattern: "hidetag",
-
-alias: ["وهمي","مخفي"],
-
-desc: "Tags everyperson of group without mentioning their numbers",
-
-category: "group",
-
-filename: __filename,
-
-use: '<text>',
-
-},
-
-async(Void, citel, text) => {
-
-if (!citel.isGroup) return citel.reply(tlang().group);
-
-const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
-
-const participants = citel.isGroup ? await groupMetadata.participants : "";
-
-const groupAdmins = await getAdmin(Void, citel)
-
-const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-
-if (!isAdmins) return citel.reply(tlang().admin);
-
-if (!isAdmins) citel.reply(tlang().admin);
-
-Void.sendMessage(citel.chat, {
-
-text: text ? text : "",
-
-mentions: participants.map((a) => a.id),
-
-}, {
-
-quoted: citel,
-
-});
-
+let handler = async (m, { conn, text, participants }) => {
+let users = participants.map(u => conn.decodeJid(u.id))
+let q = m.quoted ? m.quoted : m
+let c = m.quoted ? m.quoted : m.msg
+const msg = conn.cMod(m.chat,
+generateWAMessageFromContent(m.chat, {
+[c.toJSON ? q.mtype : 'extendedTextMessage']: c.toJSON ? c.toJSON() : {
+text: c || ''
 }
-
+}, {
+quoted: m,
+userJid: conn.user.id
+}),
+text || q.text, conn.user.jid, { mentions: users }
 )
+await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
+}
+handler.help = ['hidetag']
+handler.tags = ['group']
+handler.command = ['مخفي'] 
+handler.group = true
+handler.admin = true
 
-
+export default handler
