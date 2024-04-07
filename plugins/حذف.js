@@ -1,17 +1,76 @@
-const handler = async (m, { conn, command }) => {
-  if (!m.quoted) throw 'قم بالاشارة للرسالة التي تريد مسحها';
-  try {
-    let bilek = m.message.extendedTextMessage.contextInfo.participant;
-    let banh = m.message.extendedTextMessage.contextInfo.stanzaId;
-    return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: banh, participant: bilek } });
-  } catch {
-    return conn.sendMessage(m.chat, { delete: m.quoted.vM.key });
-  }
-};
+cmd({
 
-handler.help = ['delete'];
-handler.tags = ['حذف'];
-handler.command = /^(delete)$/i;
-handler.admin = true;
+pattern: "del",
 
-export default handler;
+alias: ["delete","حذف","مسح"],
+
+desc: "Deletes message of any user",
+
+category: "group",
+
+filename: __filename,
+
+use: '<quote/reply message.>',
+
+},
+
+async(Void, citel, text) => {
+
+if (citel.quoted.Bot) {
+
+const key = {
+
+remoteJid: citel.chat,
+
+fromMe: false,
+
+id: citel.quoted.id,
+
+participant: citel.quoted.sender
+
+}
+
+await Void.sendMessage(citel.chat, { delete: key })
+
+}
+
+if (!citel.quoted.isBot) {
+
+if (!citel.isGroup) return citel.reply(tlang().group)
+
+const groupAdmins = await getAdmin(Void, citel)
+
+const botNumber = await Void.decodeJid(Void.user.id)
+
+const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
+
+const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+
+if (!isAdmins) return citel.reply('*֎╎هـذا الأمـر خـاص بـالـمـشـرفـيـن*')
+
+if (!isBotAdmins) return citel.reply('*֎╎حـطـنـي مـشـرف*')
+
+if (!citel.quoted) return citel.reply(`*֎╎وش تـبـغـى احـذف ${tlang().greet}*`);
+
+let { chat, fromMe, id } = citel.quoted;
+
+const key = {
+
+remoteJid: citel.chat,
+
+fromMe: false,
+
+id: citel.quoted.id,
+
+participant: citel.quoted.sender
+
+}
+
+await Void.sendMessage(citel.chat, { delete: key })
+
+}
+
+}
+
+)
+
