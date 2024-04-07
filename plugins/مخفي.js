@@ -18,10 +18,10 @@ text || q.text, conn.user.jid, { mentions: users }
 )
 await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
 }
-handler.help = ['hidetag']
-handler.tags = ['group']
+handler.help = ['مخفيي']
+handler.tags = ['وههمي']
 handler.command = ['مخفي'] 
-handler.group = true
+handler.group = true 
 handler.admin = true
 
 export default handler
