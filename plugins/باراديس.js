@@ -53,7 +53,7 @@ conn.sendMessage(m.chat, {
   gifPlayback: true,gifAttribution: 0
     }, { quoted: m });
 }; 
-handler.help = ['باراديس]
+handler.help = ['باراديس']
 handler.tags = ['براديس']
 handler.command = ['الافضل'] 
 
