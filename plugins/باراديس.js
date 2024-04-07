@@ -54,7 +54,7 @@ conn.sendMessage(m.chat, {
     }, { quoted: m });
 }; 
 handler.help = ['باراديس]
-handler.tags = ['براديس]
+handler.tags = ['براديس']
 handler.command = ['الافضل'] 
 
 export default handler
