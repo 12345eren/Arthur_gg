@@ -1,27 +1,13 @@
-import MessageType from '@adiwajshing/baileys'
-import { generateWAMessageFromContent } from '@adiwajshing/baileys'
-
-let handler = async (m, { conn, text, participants }) => {
-let users = participants.map(u => conn.decodeJid(u.id))
-let q = m.quoted ? m.quoted : m
-let c = m.quoted ? m.quoted : m.msg
-const msg = conn.cMod(m.chat,
-generateWAMessageFromContent(m.chat, {
-[c.toJSON ? q.mtype : 'extendedTextMessage']: c.toJSON ? c.toJSON() : {
-text: c || ''
+let handler = async (m, { conn, text }) => {
+let [l, r] = text.split`|`
+if (!l) l = ''
+if (!r) r = ''
+conn.reply(m.chat, l + readMore + r, m)
 }
-}, {
-quoted: m,
-userJid: conn.user.id
-}),
-text || q.text, conn.user.jid, { mentions: users }
-)
-await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
-}
-handler.help = ['hidetag']
-handler.tags = ['group']
-handler.command = ['مخفي'] 
-handler.group = true
-handler.admin = true
-
+handler.help = ['readmore', 'spoiler'].map(v => v + ' <teks>|<teks>')
+handler.tags = ['tools']
+handler.command = /^(spoiler|وهمي|قراءة-المزيد|selengkapnya)$/i
 export default handler
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
