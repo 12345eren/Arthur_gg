@@ -6,14 +6,14 @@ global.rpg = {
     if (isNaN(level)) return { name: '', level: '' }
     
     const role = [
-      { name: "ضعيف", level: 0 }, { name: "مبتدئ", level: 4 }, 
-      { name: "مقاتل", level: 8 }, { name: "القادر علي التحدي", level: 12 }, 
-      { name: "محارب", level: 16 }, { name: "المطرشم", level: 20 }, 
-      { name: "بطل", level: 24 }, { name: "العالمي", level: 28 }, 
-      { name: "اسطوره", level: 32 }, { name: "خرافة", level: 36 },
-      { name: "ساحر", level: 48 }, { name: "الساحر القوي", level: 52 }, 
-      { name: "حكيم", level: 56 }, { name: "فاحر", level: 60 }, 
-      { name: "صياد", level: 100 }
+      { name: "جندي", level: 0 }, { name: "مبتدئ", level: 4 }, 
+      { name: "محارب", level: 8 }, { name: "مغوار", level: 12 }, 
+      { name: "فارس", level: 16 }, { name: "مغامر", level: 20 }, 
+      { name: "بطل", level: 24 }, { name: "محنك", level: 28 }, 
+      { name: "ساحر", level: 32 }, { name: "حكيم", level: 36 },
+      { name: "دوق", level: 48 }, { name: "الساحر الأسود", level: 52 }, 
+      { name: "صياد", level: 56 }, { name: "الملك", level: 60 }, 
+      { name: "ملك", level: 100 }
     ];
 
     return role.reverse().find(role => level >= role.level)
