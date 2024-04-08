@@ -15,10 +15,10 @@ let prem = global.prems.includes(who.split `@` [0])
 let sn = createHash('md5').update(who).digest('hex')
 let str = `*⎔⋅• ┗╼╼╃✦⊰💧⊱✦╄╼╾┛ •⋅⎔*
 *『يازين افتارك↞┇✨️』*
-*⎔↞┃الاسم🏷️ ↞ ${username} ${registered ? '(' + name + ') ': ''}┃*
+*⎔↞┃الاسم🏷️ ↞* ${username} ${registered ? '(' + name + ') ': ''}┃
 *⎔↞┃الـرقـم⚡️ ↞* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}┃
 *⎔↞┃اللـينـك📮 ↞* wa.me/${who.split`@`[0]}${registered ? '\n*العمر:* ' + age + 'سنه' : ''}┃*
-*⎔↞┃عـدد الالماس ↞ 💎${limit} الماسه┃*
+*⎔↞┃عـدد الالماس ↞ 💎${limit}┃*
 *⎔↞┃مـسـجـل🖨️ ↞ ${registered ? 'نعم': 'لا'}┃*
 *⎔↞┃بــريـم↞ ❄️ ${premiumTime > 0 ? 'نعم' : (isPrems ? 'نعم' : 'لا') || ''}
 *⎔↞┃الـرقـم الـسري⁉️ ↞*
