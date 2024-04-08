@@ -1,27 +1,38 @@
-import MessageType from '@adiwajshing/baileys'
-import { generateWAMessageFromContent } from '@adiwajshing/baileys'
-
-let handler = async (m, { conn, text, participants }) => {
-let users = participants.map(u => conn.decodeJid(u.id))
-let q = m.quoted ? m.quoted : m
-let c = m.quoted ? m.quoted : m.msg
-const msg = conn.cMod(m.chat,
-generateWAMessageFromContent(m.chat, {
-[c.toJSON ? q.mtype : 'extendedTextMessage']: c.toJSON ? c.toJSON() : {
-text: c || ''
+function handler(m, { text }) {
+  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
+  m.reply(teks.replace(/[a-z]/gi, v => {
+      return { 
+          'a': 'a',
+          'b': 'b',
+          'c': 'c',
+          'd': 'd',
+          'e': 'e',
+          'f': 'f',
+          'g': 'g',
+          'h': 'h',
+          'i': 'i',
+          'j': 'j',
+          'k': 'k',
+          'l': 'l',
+          'm': 'm',
+          'n': 'n',
+          'o': 'o',
+          'p': 'p',
+          'q': 'q',
+          'r': 'r',
+          's': 's',
+          't': 't',
+          'u': 'u',
+          'v': 'v',
+          'w': 'w',
+          'x': 'x',
+          'y': 'y',
+          'z': 'z', 
+      }[v.toLowerCase()] || v
+  }))
 }
-}, {
-quoted: m,
-userJid: conn.user.id
-}),
-text || q.text, conn.user.jid, { mentions: users }
-)
-await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
-}
-handler.help = ['مخفيي']
-handler.tags = ['وههمي']
-handler.command = ['مخفي'] 
-handler.group = true 
-handler.admin = true
+handler.help = ['V E N O M']
+handler.tags = ['V E N O M']
+handler.command =  /^(وهمي|مخفي)$/i
 
 export default handler
