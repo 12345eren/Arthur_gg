@@ -13,13 +13,16 @@ let { name, limit, lastclaim, registered, regTime, age, premiumTime } = global.d
 let username = conn.getName(who)
 let prem = global.prems.includes(who.split `@` [0])
 let sn = createHash('md5').update(who).digest('hex')
-let str = `*الاسم:* ${username} ${registered ? '(' + name + ') ': ''}
-*الرقم:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-*اللينك:* wa.me/${who.split`@`[0]}${registered ? '\n*العمر:* ' + age + 'سنه' : ''}
-*عدد الالماس:* ${limit} الماسه💎
-*مسجل:* ${registered ? 'نعم': 'لا'}
-*بريم:* ${premiumTime > 0 ? 'نعم' : (isPrems ? 'نعم' : 'لا') || ''}
-*الرقم السري:* 
+let str = `*⎔⋅• ┗╼╼╃✦⊰💧⊱✦╄╼╾┛ •⋅⎔*
+『يازين افتارك↞┇✨️』*
+*الاسم:* ${username} ${registered ? '(' + name + ') ': ''}┃*
+*↞ ⚡️الـرقـم┃↞⎔* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}┃*
+*↞ 📮اللـينـك┃↞⎔* wa.me/${who.split`@`[0]}${registered ? '\n*العمر:* ' + age + 'سنه' : ''}┃*
+*↞ 💎عـدد الالماس┃↞⎔* ${limit} الماسه┃*
+*↞ 🖨️مـسـجـل┃↞⎔* ${registered ? 'نعم': 'لا'}┃*
+*↞ ❄️بــريـم┃↞⎔* ${premiumTime > 0 ? 'نعم' : (isPrems ? 'نعم' : 'لا') || ''}
+*↞ ⁉️الـرقـم الـسري┃↞⎔*
+*✦━━✤━ –⊰💧⊱– ━✤━━✦* 
 ${sn}`
 conn.sendMessage(m.chat, { image: { url: pp }, caption: str }, { quoted: m })
 //conn.sendButton(m.chat, str, author, pp, [['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', '/menu']], m)
