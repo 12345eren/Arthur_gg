@@ -10,7 +10,7 @@ if (!args[0] && !m.quoted) throw `اعطني الرابط \n\nمثال: https://
  if (!args[0].match(/tiktok/gi)) throw `تأكد من ان الرابط رابط تيك توك`;
  
  
-  let txt = 'انا لا اتحمل ذنب اغانيك ';
+  let txt = 'انا لا اتحمل ذنب اغانيك... ';
 
   try {
     const { author: { nickname }, video, description } = await tiktokdl(args[0]);
