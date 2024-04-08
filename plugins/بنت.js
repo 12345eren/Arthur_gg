@@ -9,5 +9,5 @@ conn.sendFile(m.chat, json.url, 'error.jpg', `*💀💔قفشتك عاوز تت�
 }
 handler.help = ['waifu']
 handler.tags = ['anime']
-handler.command = /^(بنات)$/i
+handler.command = /^(بنااات)$/i
 export default handler
