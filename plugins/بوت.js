@@ -9,7 +9,7 @@ let done = '🩶';
     conn.sendFile(m.chat, 'https://telegra.ph/file/5cbf1d6fcd25dea5b80cb.jpg', 'image.jpg', message, m);
 };
 
-handler.customPrefix = /^(bot|بوت)$/i;
+handler.customPrefix = /^(bot|بببوت)$/i;
 handler.command = new RegExp;
 
 export default handler;
