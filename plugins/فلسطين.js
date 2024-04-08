@@ -19,7 +19,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/5a7e954fdd4f0ec4646a2.mp4';
+let videoUrl = 'https://telegra.ph/file/d73c496a6329789710bcc.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -36,15 +36,15 @@ let readMore = more.repeat(900)
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = ` 
 
-  نعم يا↞${taguser}
-  *╭━━━ •⸽⃕𝑷𝑨𝑹𝑨𝑫𝑰𝑺𝑬𝘰⃨፝⃕✰• ━━━*
-*┃𓆩بـاراديـس الاعـظـم 🔱↞*
-*┃𓆩بـاراديــس عـمتـك   🧚‍♀️↞*
-*┃𓆩بـاراديس الافـضـل  💎↞*
-*┃𓆩بـاراديــس  وطـن    🪶↞*
+   ${taguser}
+  *◈ ━━━━━━━ ⸙ ━━━━━━━ ◈*
+*↞صباح النور يا أقصى صباح النور يا *
+*مسرى رسول الله صلى الله عليه وسلم*
+* من قلبي من ذاتي، صباح النور يا بوابة*
+*التاريخ والمجد ويا إشراقة الإسلام┃❄️┃*
 *◈ ━━━━━━━ ⸙ ━━━━━━━ ◈*
 
-*┃𝑨𝑹𝑻𝑯𝑼𝑹-⚡️┃↞⎔*
+*┃𝑨𝑹𝑻𝑯𝑼𝑹-🇵🇸┃↞⎔*
  `.trim();
 
 conn.sendMessage(m.chat, {
@@ -55,7 +55,7 @@ conn.sendMessage(m.chat, {
 }; 
 handler.help = ['فلسطيني']
 handler.tags = ['القدس']
-handler.command = ['فلسطين] 
+handler.command = ['فلسطين'] 
 
 export default handler
 function clockString(ms) {
