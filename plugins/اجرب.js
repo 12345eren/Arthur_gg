@@ -7,7 +7,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         conn.reply(m.chat, '❐┃لم يتم الاجابة علي السؤال بعد┃❌ ❯', conn.tebakbendera[id][0])
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/Hjfjckb/Kurosaki/main/Kurosaki.json')).json()')).json()
+    let src = await (await fetch('https://raw.githubusercontent.com/Hjfjckb/Kurosaki/main/Kurosaki.jsonsflag')).json()
   let json = src[Math.floor(Math.random() * src.length)]
     let caption = `*${command.toUpperCase()}*
   ❐↞┇الـوقـت⏳↞ *${(timeout / 1000).toFixed(2)} ┇
@@ -26,6 +26,6 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 }
 handler.help = ['guessflag']
 handler.tags = ['game']
-handler.command = /^احزن/i
+handler.command = /^احزززر/i
 
 export default handler
