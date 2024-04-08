@@ -50,6 +50,6 @@ let handler = async (m, { conn }) => {
   conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '*┃صور مانهوا فخامه🀄↞┃*', m)
 }
 handler.help = ['dado']
-handler.tags = ['game']
-handler.command = ['خلفية مانهوا', 'dados'] 
+handler.tags = ['gameh']
+handler.command = ['مانهوو', 'dadgos'] 
 export default handler
