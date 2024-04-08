@@ -7,7 +7,7 @@ if (!mime) throw '*اعمل ريبلاي للصوره او الفيديو ال �
 let media = await q.download()
 let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
 let link = await (isTele ? uploadImage : uploadFile)(media)
-m.reply(`*رابط ملفك:* ${link}`)
+m.reply(`*⎔↞┃رابط ملفك🔖┃* ${link}`)
 }
 handler.help = ['tourl <reply image>']
 handler.tags = ['sticker']
