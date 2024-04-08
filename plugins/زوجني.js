@@ -101,7 +101,7 @@ const dir = [
   'https://telegra.ph/file/16ebe2aac10b74219f0f0.jpg', 
 ];
 let handler = async (m, { conn }) => {
-  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '*┃مبروك الزواج فين بيكون شهر العسل🙂‍↕┃*', m)
+  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '*⚡️┃😂مبروك الزواج┃⚡️*', m)
 }
 handler.help = ['dado']
 handler.tags = ['game']
