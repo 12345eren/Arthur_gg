@@ -2,7 +2,7 @@
 <br>
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=00CB22&width=435&lines=بوت+لوفي+بوت+قابل+للتطوير;كل+شي+غير+مشفر+استمتع+وشكرا+لك+%3A3;%5B+يوهان+هو+المطور+تدعمه+7لاتنسى+%5D_)](https://git.io/typing-svg)
+[![Typing SVG](_)](https://github.com/12345eren/Arthur_gg/edit/master/README.md)
 <img src="https://telegra.ph/file/4d0c04ee977c431f6d57c.jpg" width="400" height="230"/>
 </div>
 <br>
