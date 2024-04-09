@@ -32,7 +32,7 @@ if (command == 'ttp') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
 }
-handler.command = handler.help = ['attp']
+handler.command = handler.help = ['ستك']
 handler.tags = ['sticker']
 export default handler
 
