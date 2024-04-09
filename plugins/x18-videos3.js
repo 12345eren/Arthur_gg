@@ -13,8 +13,6 @@ handler.command = /^animestory1|ايديت$/i
 export default handler
 
 const dir =[
-
- [
 "https://g.top4top.io/m_2257kulna0.mp4",
 "https://k.top4top.io/m_22748dfb90.mp4",
 "https://i.top4top.io/m_2274688ut3.mp4",
