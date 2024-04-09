@@ -1,24 +1,18 @@
-let fetch = require('node-fetch')
+let handler = async (m, { conn, usedPrefix, command }) => {
 
-let handler = async (m, { conn }) => {
-if (!DATABASE._data.chats[m.chat].nsfw && m.isGroup) throw '❰ ⚠️ ❱ *Función Nsfw Desactivada*\n*Escriba #on nsfw para activar esta Función.*'	
-	let url = packmen[Math.floor(Math.random() * packmen.length)]
-	await conn.sendMessage(m.chat, {
-		contentText: '*Pack xxx By TheBrokers*',
-		footerText: 'Gata Dios',
-		buttons: [
-			{ buttonId: '.pack3', buttonText: { displayText: 'SIGUIENTE 🔄' }, type: 1 }
-		],
-		headerType: 4,
-		imageMessage: (await conn.prepareMessageMedia(await (await fetch(url)).buffer(), 'imageMessage', {})).imageMessage
-	}, 'buttonsMessage', { quoted: m })
+await conn.sendMessage(m.chat, { video: { url: dir[Math.floor(Math.random() * dir.length)] }, caption: `*🚫┃الفيديو يوجد فيه موسيقي┃🚫*` }, { quoted: m })
+
 }
-handler.command = /^(pack3)$/i
-handler.tags = ['internet']
-handler.help = ['pack']
-module.exports = handler
 
-global.packmen = [
+handler.help = ['كلرل']
+
+handler.tags = ['edd']
+
+handler.command = /^animestory1|ايديت$/i
+
+export default handler
+
+const dir =[
   "https://i.imgur.com/TK0qLAu.jpg",
   "https://i.imgur.com/q8lKT40.jpg",
   "https://i.imgur.com/OwWdL9u.jpg",
