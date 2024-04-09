@@ -1,16 +1,20 @@
-let handler = async(m, { conn, usedPrefix, command }) => {
-if (!DATABASE._data.chats[m.chat].nsfw && m.isGroup) throw '❰ ⚠️ ❱ *Función Nsfw Desactivada*\n*Escriba #on nsfw para activar esta Función.*'
-  
-await conn.sendButtonVid(m.chat, pickRandom(asupan), '🔥🔥🔥🔥', 'Gata Dios', 'SIGUIENTE 🔄🥵', `${usedPrefix + command}`, m, false)
-}
-handler.command = /^(pornogayvid|pornovidgay|pornogayv|porngay|Pornogayvid|pornovidg|Pornogayv|porngayvid)$/i
-module.exports = handler
+let handler = async (m, { conn, usedPrefix, command }) => {
 
-function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
+await conn.sendMessage(m.chat, { video: { url: dir[Math.floor(Math.random() * dir.length)] }, caption: `*🚫┃الفيديو يوجد فيه موسيقي┃🚫*` }, { quoted: m })
+
 }
 
-const asupan = [
+handler.help = ['علر']
+
+handler.tags = ['sssaa']
+
+handler.command = /^animestory1|ايديت$/i
+
+export default handler
+
+const dir =[
+
+ [
 "https://g.top4top.io/m_2257kulna0.mp4",
 "https://k.top4top.io/m_22748dfb90.mp4",
 "https://i.top4top.io/m_2274688ut3.mp4",
