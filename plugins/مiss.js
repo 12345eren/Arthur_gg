@@ -10,7 +10,7 @@ try {
 console.log(e)}}
 handler.help = ['itssostupid', 'iss', 'stupid'];
 handler.tags = ['maker'];
-handler.command = /^(itssostupid|iss|stupid)$/i;
+handler.command = /^(|iss|stupid)$/i;
 handler.limit = 1
 handler.register = true
 export default handler;
