@@ -43,7 +43,7 @@ sections
 } */
 
 if (command == 'miestado') { 
-if (!text) return conn.sendMessage(m.chat, {text: `❖ CÓMO ESTÁ HOY? 🤔 ${user.registered === true ? user.name : name}\n\n*╭⸺ ⊹ ⸺  ⊹ ⸺ ⊹ ⸺ ⊹ ⸺ ⊹ 》*\n👋 *SELECCIONE SU ESTADO ACTUAL POR FAVOR*\n*❖ SU ESTADO ACTUAL:* ${typeof user.miestado === 'string' ? user.miestado : 'Estado no asignado\n❖ Ejemplo /miestado 😃'}\n*╰⸺ ⊹ ⸺  ⊹ ⸺ ⊹ ⸺ ⊹ ⸺ ⊹ 》*`}, {quoted: fkontak})
+if (!text) return conn.sendMessage(m.chat, {text: `❖ CÓMO ESTÁ HOY? 🤔 ${user.registered === true ? user.name : name}\n\n*╭⸺ ⊹ ⸺  ⊹ ⸺ ⊹ ⸺ ⊹ ⸺ ⊹ 》*\n👋 *اختر حالتك الحالية من فضلك*\n*❖ حالتك الحالية:* ${typeof user.miestado === 'string' ? user.miestado : 'الحالة غير المعينة\n❖ مثالmiestadomiestadomiestadomiestadomiestadomiestadomiestadorandomrandom /miestado 😃'}\n*╰⸺ ⊹ ⸺  ⊹ ⸺ ⊹ ⸺ ⊹ ⸺ ⊹ 》*`}, {quoted: fkontak})
 miEstado = text.trim()
 user.miestado = miEstado
 if (text) return conn.sendMessage(m.chat, {text: eg + `*GENIAL!! SE HA AGREGADO UN ESTADO*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n` + `*❖ SU ESTADO:* ${user.miestado}`}, {quoted: fkontak})
