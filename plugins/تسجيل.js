@@ -1,4 +1,4 @@
-const comandos = /piedra|papel|tijera|estado|verificar|creadora|bottemporal|grupos|instalarbot|términos|bots|deletebot|eliminarsesion|serbot|verify|registrar|deletesesion|jadibot/i
+deletesesiondeletesesiondeletesesiondeletesesionconst comandos = /piedra|papel|tijera|estado|verificar|creadora|bottemporal|grupos|instalarbot|términos|bots|deletebot|eliminarsesion|serbot|verify|registrar|deletesesion|jadibot/i
 export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner, usedPrefix, command }) {
 if (m.isBaileys && m.fromMe) return !0
 if (m.isGroup) return !1
