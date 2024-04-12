@@ -1,9 +1,12 @@
 <h1 align="center"> 𝑨𝑹𝑻𝑯𝑼𝑹 </h1>
 <br>
-<div align="center">
+<div align="center" بوت مطور >
+
+
 
 
 [![Typing SVG](_)](https://github.com/12345eren/Arthur_gg/edit/master/README.md)
+
 
 
 
