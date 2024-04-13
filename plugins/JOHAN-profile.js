@@ -26,7 +26,7 @@ ${clockString(user.premiumTime)}
 }
 handler.help = ['profile']
 handler.tags = ['main']
-handler.command = /^بروفايلي$/i
+handler.command = /^برفايلي$/i
 export default handler
 
 const more = String.fromCharCode(8206)
