@@ -5,7 +5,6 @@ let handler = async (m, { conn, command, text, usedPrefix, participants }) => {
       "سارق",
       "طباخ",
       "سائق",
-      ةسكرتيره",
       "مدير",
       "مغني",
      "مخدرات",
@@ -23,7 +22,8 @@ let handler = async (m, { conn, command, text, usedPrefix, participants }) => {
      "شاعر",
      "عسكري",
       "كسلان",
-      "خياط"
+   "سكرتيرة",
+     "خياط",
      ,"كاتب",
       "راعي مطلقات",
       "مصمم",
