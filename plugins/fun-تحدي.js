@@ -1,5 +1,6 @@
 let handler  = async (m, { conn }) => {
-conn.reply(m.chat,`*『${pickRandom(global.t7dy)}』*`, m)
+conn.reply(m.chat,`*✓┃خليك قد التحدي┃✓*
+*『${pickRandom(global.t7dy)}』*`, m)
 }
 handler.help = ['bzmzjdks']
 handler.tags = ['fun']
@@ -11,5 +12,17 @@ function pickRandom(list) {
 }
 
  global.t7dy = [ 
-'اضرب نفسك بالكف',
+'قول احبك لاكثر شخص تكرهه',
+'اضرب نفسك كف',   
+'ارسل صوت',  
+'بلك 5 منشن',  
+ 'لا تشرب ماء ٥ ساعات',
+ 'صور اخر محادثه',
+'غني',
+'سوي حاله انك خروف',
+'اكذب على اول شخص',
+'احذف كل الشات', 
+'سوي 10 ضغط', 
+'لا تكتب بالكيبورد ساعه كامل',
+'قول نكته',  
  ] 
