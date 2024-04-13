@@ -329,8 +329,8 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '👋 .ة¡منور!\n@user';
-  conn.bye = '👋 ¡نراك. لاحقا!\n@user';
+  conn.welcome = '👋 ¡منور/ة!\n@user';
+  conn.bye = '👋 ¡لاترجع!\n@user';
   conn.spromote = '*↞ @user اصبح مشرفا✓┃🚫┃┊*';
   conn.sdemote = '*↞ @user لم يعد مشرفا✓┃🚫┃┊*';
   conn.sDesc = '*↞ تم تغيير وصف لمجموعة✓┃🚫┃┊*';
