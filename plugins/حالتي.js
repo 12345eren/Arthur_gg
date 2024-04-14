@@ -50,6 +50,6 @@ if (text) return conn.sendMessage(m.chat, {text: eg + `*GENIAL!! SE HA AGREGADO 
 //conn.sendButton(m.chat, eg + `*GENIAL!! SE HA AGREGADO UN ESTADO*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n` + `*❖ SU ESTADO:* ${user.miestado}`, wm, null, [[`🐈 MENU`, usedPrefix + 'menu']], m)
 miEstado = 0
 }}
-handler.command = ['miestado'] 
+handler.command = ['حالتي'] 
 handler.register = true
 export default handler
